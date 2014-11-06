@@ -23,11 +23,18 @@ angular.module('appApp')
                     }
                 },
                 resolve: {
-                    user: function ($stateParams, User) {
-                        return User.get({
+                    user: function ($stateParams, User, $q) {
+                        var deferred = $q.defer();
+                        var user = User.get({
                             username: $stateParams.username,
                             'access_token': 'a46b2cade104ac6710e641571ac398d23a75347d'
-                        })
+                        }, function() {
+                            deferred.resolve(user);
+                        }, function() {
+                            deferred.reject(arguments);
+                        });
+
+                        return deferred.promise;
                     }
                 }
             })
