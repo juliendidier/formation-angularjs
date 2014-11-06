@@ -1,10 +1,10 @@
 'use strict'
 
 angular.module('appApp')
-    .run(function($rootScope) {
+    .run(function($rootScope, $state) {
         $rootScope.$on('$stateChangeError',
             function(event, toState, toParams, fromState, fromParams, error) {
-                console.log(error);
+                $state.go('error', {code: error.status});
             }
         )
     })
