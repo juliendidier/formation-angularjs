@@ -17,11 +17,21 @@ angular.module('appApp')
                     }
                 }
             })
+            .state('user', {
+                parent: 'layout',
+                url: '/users/:username',
+                views: {
+                    content: {
+                        controller: 'UsersCtrl',
+                        templateUrl: 'views/users_show.html'
+                    }
+                }
+            })
         ;
     })
 
-    .controller('UsersCtrl', function ($scope, $routeParams, UserRepositories) {
-        $scope.username = $routeParams.username;
+    .controller('UsersCtrl', function ($scope, $stateParams, UserRepositories) {
+        $scope.username = $stateParams.username;
         $scope.isLoading = true;
         $scope.isError = false;
 
