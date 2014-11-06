@@ -27,18 +27,17 @@ angular.module('appApp')
     })
 
     .controller('UsersCtrl', function ($scope, $stateParams, User, UserRepositories) {
-        $scope.username = $stateParams.username;
         $scope.isLoading = true;
         $scope.isError = false;
 
         $scope.user = User.get({
-            username: $scope.username,
-            access_token: 'a46b2cade104ac6710e641571ac398d23a75347d'
+            username: $stateParams.username,
+            'access_token': 'a46b2cade104ac6710e641571ac398d23a75347d'
         });
 
         $scope.repositories = UserRepositories.get({
-            username: $scope.username,
-            access_token: 'a46b2cade104ac6710e641571ac398d23a75347d'
+            username: $stateParams.username,
+            'access_token': 'a46b2cade104ac6710e641571ac398d23a75347d'
         }, function () {
             $scope.isLoading = false;
         }, function () {

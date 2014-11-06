@@ -1,0 +1,11 @@
+<p ng-show="isLoading">Loading...</p>
+<p ng-show="isError">Error!</p>
+<h1>
+    Repository
+    <strong>
+        <a ui-sref="user_show({username: repository.owner.login})">{{repository.owner.login}}</a>
+        /
+        {{ repository.name }}
+    </strong>
+</h1>
+

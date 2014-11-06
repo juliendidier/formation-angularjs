@@ -1,6 +1,9 @@
 <p ng-show="isLoading">Loading...</p>
 <p ng-show="isError">Error!</p>
-<p>{{ user.email }}'s repositories</p>
+<h1>User <strong>{{ user.login }}</strong></h1>
 <ul>
-    <li ng-repeat="repository in repositories">{{ repository.name }}</li>
+    <li ng-repeat="repository in repositories"><a ui-sref="repository_show({
+        username: user.login,
+        repository: repository.name
+    })">{{ repository.name }}</a></li>
 </ul>

@@ -16,4 +16,11 @@ angular.module('appApp')
             }
         });
     })
+    .factory('Repository', function ($resource) {
+        return $resource('https://api.github.com/repos/:username/:repository', {}, {
+            get: {
+                method: 'GET'
+            }
+        });
+    })
 ;
