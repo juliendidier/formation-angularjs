@@ -2,6 +2,8 @@
 
 angular.module('appApp')
     .factory('$error', function () {
-        return {};
+        return {
+            queue: []
+        };
     })
 ;

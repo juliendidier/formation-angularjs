@@ -17,6 +17,8 @@ angular.module('appApp')
 
     .controller('ErrorCtrl', function ($scope, $stateParams, $error) {
         $scope.code = $stateParams.code;
-        $scope.message = $error.message || 'Undefined error';
+
+        var error = $error.queue.pop();
+        $scope.message = error && error.message || 'Undefined error';
     }
 );
