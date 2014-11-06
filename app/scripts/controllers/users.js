@@ -1,6 +1,25 @@
 'use strict';
 
 angular.module('appApp')
+    .config(function ($stateProvider) {
+        $stateProvider
+            .state('layout', {
+                templateUrl: 'views/layout.html',
+                abstract: true
+            })
+            .state('home', {
+                parent: 'layout',
+                url: '/',
+                views: {
+                    content: {
+                        controller: 'MainCtrl',
+                        templateUrl: 'views/main.html'
+                    }
+                }
+            })
+        ;
+    })
+
     .controller('UsersCtrl', function ($scope, $routeParams, UserRepositories) {
         $scope.username = $routeParams.username;
         $scope.isLoading = true;
