@@ -6,7 +6,7 @@ angular.module('appApp')
         $scope.isLoading = true;
         $scope.isError = false;
 
-        $scope.repositories = UserRepositories.list({
+        $scope.repositories = UserRepositories.repositories({
             username: $scope.username,
             access_token: 'a46b2cade104ac6710e641571ac398d23a75347d'
         }, function () {
