@@ -26,7 +26,7 @@ angular
         ;
 
         $urlRouterProvider
-            .otherwise('/')
+            .otherwise('/error/404')
         ;
     })
 ;
