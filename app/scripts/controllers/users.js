@@ -17,7 +17,7 @@ angular.module('appApp')
                     }
                 }
             })
-            .state('user', {
+            .state('user_show', {
                 parent: 'layout',
                 url: '/users/:username',
                 views: {
