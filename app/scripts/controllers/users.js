@@ -21,19 +21,24 @@ angular.module('appApp')
                         controller: 'UsersCtrl',
                         templateUrl: 'views/users_show.html'
                     }
+                },
+                resolve: {
+                    user: function ($stateParams, User) {
+                        return User.get({
+                            username: $stateParams.username,
+                            'access_token': 'a46b2cade104ac6710e641571ac398d23a75347d'
+                        })
+                    }
                 }
             })
         ;
     })
 
-    .controller('UsersCtrl', function ($scope, $stateParams, User, UserRepositories) {
+    .controller('UsersCtrl', function ($scope, $stateParams, user, UserRepositories) {
         $scope.isLoading = true;
         $scope.isError = false;
 
-        $scope.user = User.get({
-            username: $stateParams.username,
-            'access_token': 'a46b2cade104ac6710e641571ac398d23a75347d'
-        });
+        $scope.user = user;
 
         $scope.repositories = UserRepositories.get({
             username: $stateParams.username,

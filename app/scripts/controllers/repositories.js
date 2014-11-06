@@ -16,10 +16,11 @@ angular.module('appApp')
         ;
     })
 
-    .controller('RepositoriesCtrl', function ($scope, $stateParams, Repository) {
+    .controller('RepositoriesCtrl', function ($scope, $stateParams, Repository, user) {
         $scope.isLoading = true;
         $scope.isError = false;
 
+        $scope.user = user;
         $scope.repository = Repository.get({
             username: $stateParams.username,
             repository: $stateParams.repository,
