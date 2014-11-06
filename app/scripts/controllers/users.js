@@ -30,8 +30,8 @@ angular.module('appApp')
                             'access_token': 'a46b2cade104ac6710e641571ac398d23a75347d'
                         }, function() {
                             deferred.resolve(user);
-                        }, function() {
-                            deferred.reject(arguments);
+                        }, function(httpResponse) {
+                            deferred.reject(httpResponse);
                         });
 
                         return deferred.promise;
