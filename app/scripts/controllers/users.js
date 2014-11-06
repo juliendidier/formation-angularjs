@@ -3,10 +3,6 @@
 angular.module('appApp')
     .config(function ($stateProvider) {
         $stateProvider
-            .state('layout', {
-                templateUrl: 'views/layout.html',
-                abstract: true
-            })
             .state('home', {
                 parent: 'layout',
                 url: '/',

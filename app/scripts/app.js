@@ -17,7 +17,14 @@ angular
         'ui.router',
         'ngTouch'
     ])
-    .config(function ($urlRouterProvider) {
+    .config(function ($stateProvider, $urlRouterProvider) {
+        $stateProvider
+            .state('layout', {
+                templateUrl: 'views/layout.html',
+                abstract: true
+            })
+        ;
+
         $urlRouterProvider
             .otherwise('/')
         ;
