@@ -1,9 +1,15 @@
-<p ng-show="isLoading">Loading...</p>
-<p ng-show="isError">Error!</p>
 <h1>User <strong>{{ user.login }}</strong></h1>
-<ul>
-    <li ng-repeat="repository in repositories"><a ui-sref="repository_show({
-        username: user.login,
-        repository: repository.name
-    })">{{ repository.name }}</a></li>
-</ul>
+
+<p ng-show="isError">Error!</p>
+
+<p ng-show="isLoading">Loading...</p>
+
+<div ng-hide="isLoading">
+    <img class="placeholder pull-right" ng-src="{{ user.avatar_url | ghsize: 100 }}" />
+    <ul>
+        <li ng-repeat="repository in repositories"><a ui-sref="repository_show({
+            username: user.login,
+            repository: repository.name
+        })">{{ repository.name }}</a></li>
+    </ul>
+</div>
