@@ -15,7 +15,8 @@ angular.module('appApp')
             })
     })
 
-    .controller('ErrorCtrl', function ($scope, $stateParams) {
+    .controller('ErrorCtrl', function ($scope, $stateParams, $error) {
         $scope.code = $stateParams.code;
+        $scope.message = $error.message || 'Undefined error';
     }
 );

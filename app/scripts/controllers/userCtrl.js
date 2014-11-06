@@ -42,6 +42,11 @@ angular.module('appApp')
 
                         return deferred.promise;
                     }
+                },
+                data: {
+                    resolveError: function(params) {
+                        return 'User "'+params.username+'" not found';
+                    }
                 }
             })
         ;
