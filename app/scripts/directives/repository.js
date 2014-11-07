@@ -11,14 +11,21 @@ angular
             }
         };
     })
-    .directive('ghPanel', function() {
+    .directive('ghPanel', function($state) {
         return {
             templateUrl: 'views/directives/panel.html',
             transclude: true,
             restrict: 'E',
             scope: {
-                title: '=title',
-                href: '=href'
+                title: '=',
+                hrefState: '@',
+                hrefStateParams: '='
+            },
+            link: function($scope, element, attrs, controllers) {
+                if ($scope.hrefState) {
+                    $scope.href = $state.href($scope.hrefState, $scope.hrefStateParams);
+                    console.log($scope.href);
+                }
             }
         };
     })
