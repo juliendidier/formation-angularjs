@@ -11,4 +11,14 @@ angular
             }
         };
     })
+    .directive('ghPanel', function() {
+        return {
+            templateUrl: 'views/directives/panel.html',
+            transclude: true,
+            restrict: 'E',
+            scope: {
+                title: '@title'
+            }
+        };
+    })
 ;
