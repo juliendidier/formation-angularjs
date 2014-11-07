@@ -6,3 +6,4 @@ angular.module('appApp')
             return value+(value.indexOf('?') > 0 ? '&' : '?')+'size='+size;
         }
     })
+;
