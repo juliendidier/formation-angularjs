@@ -17,7 +17,7 @@ angular
             transclude: true,
             restrict: 'E',
             scope: {
-                title: '@title'
+                title: '=title'
             }
         };
     })
