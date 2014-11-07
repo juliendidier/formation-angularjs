@@ -8,7 +8,6 @@ angular
                 $(element).click(function() {
                     Counter.count+= Number(attrs.ghClickCount);
                     $scope.$apply();
-                    console.log(Counter.count);
                 });
             }
         };

@@ -1,0 +1,11 @@
+<div>
+    <h1>panels</h1>
+    <ul>
+        <li ng-repeat="panel in panels">
+            <input type="checkbox" ng-model="panel.visible" />
+            {{ panel.title }}
+        </li>
+    </ul>
+</div>
+
+<div id="panels" ng-transclude></div>

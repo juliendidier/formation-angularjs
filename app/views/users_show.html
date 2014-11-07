@@ -7,13 +7,15 @@
 <div ng-hide="isLoading">
     <img class="placeholder pull-right" ng-src="{{ user.avatar_url | ghsize: 100 }}" />
 
-    <gh-panel
-        ng-repeat="repository in repositories | orderBy:'-stargazers_count'"
-        title="repository.name"
-        href-state="repository_show"
-        href-state-params="{username: user.login, repository: repository.name}">
-        <gh-repository repository="repository"></gh-repository>
-    </gh-panel>
+    <gh-panel-container>
+        <gh-panel
+            ng-repeat="repository in repositories | orderBy:'-stargazers_count'"
+            title="repository.name"
+            href-state="repository_show"
+            href-state-params="{username: user.login, repository: repository.name}">
+            <gh-repository repository="repository"></gh-repository>
+        </gh-panel>
+    </gh-panel-container>
 </div>
 
 
