@@ -5,7 +5,7 @@ angular
     .directive('ghPanel', function($state) {
         return {
             require: [
-                '^ghPanelContainer'
+                '?^ghPanelContainer'
             ],
             templateUrl: 'views/directives/panel.html',
             transclude: true,
