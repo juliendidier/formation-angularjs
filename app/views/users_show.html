@@ -7,9 +7,8 @@
 <div ng-hide="isLoading">
     <img class="placeholder pull-right" ng-src="{{ user.avatar_url | ghsize: 100 }}" />
     <ul>
-        <li ng-repeat="repository in repositories"><a ui-sref="repository_show({
-            username: user.login,
-            repository: repository.name
-        })">{{ repository.name }}</a></li>
+        <li ng-repeat="repository in repositories">
+            <gh-repository repository="repository"></gh-repository>
+        </li>
     </ul>
 </div>
