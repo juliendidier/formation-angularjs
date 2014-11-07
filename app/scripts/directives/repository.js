@@ -24,7 +24,6 @@ angular
             link: function($scope, element, attrs, controllers) {
                 if ($scope.hrefState) {
                     $scope.href = $state.href($scope.hrefState, $scope.hrefStateParams);
-                    console.log($scope.href);
                 }
             }
         };

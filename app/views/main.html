@@ -1,11 +1,11 @@
-<div class="jumbotron">
-  <h1>'Allo, 'Allo!</h1>
-  <p class="lead">
-    <input type="test" ng-model="username" />
-    <p ng-show="username">
-      <a  class="btn btn-success" ui-sref="user_show({ username: username})">view {{ username }}</a>
+<div class="jumbotron" gh-click-count="2">
+    <h1>'Allo, 'Allo!</h1>
+    <p class="lead">
+        <input type="test" ng-model="username" />
+        <p ng-show="username">
+            <a class="btn btn-success" ui-sref="user_show({ username: username})">view {{ username }}</a>
+        </p>
     </p>
-  </p>
 </div>
 
 <gh-panel title="'hello world!'">

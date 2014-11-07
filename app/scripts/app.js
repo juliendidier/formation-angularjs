@@ -20,8 +20,17 @@ angular
     .config(function ($stateProvider, $urlRouterProvider) {
         $stateProvider
             .state('layout', {
-                templateUrl: 'views/layout.html',
-                abstract: true
+                abstract: true,
+                views: {
+                    '': {
+                        templateUrl: 'views/layout.html'
+                    },
+                    'header@layout': {
+                        controller: function ($scope, Counter) {
+                            $scope.counter = Counter;
+                        }
+                    }
+                }
             })
         ;
 
